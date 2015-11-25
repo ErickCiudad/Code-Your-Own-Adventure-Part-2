@@ -9,12 +9,11 @@ function show_image(src, width, height, alt, id) {
     img.alt = alt;
     img.id = id;
     // This next line will just add it to the <body> tag
-
     document.body.appendChild(img);
-
 }
 
-function delete_image(img) {
-    img.parentNode.removeChild(img);
+function delete_image() {
+    test.parentNode.removeChild(test);
 }
 
+document.body.removeChild(img);
