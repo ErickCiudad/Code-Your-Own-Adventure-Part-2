@@ -1,0 +1,59 @@
+body{
+    background-image: url(http://i1315.photobucket.com/albums/t583/DwindlingDwarf/eb3e0283-d10c-4481-8c02-2b243ffe8e74_zps1fc9e714.png);
+}
+
+#header{
+    background-color:rgba(0,0,0,0.65);
+    width: 70%;
+    position: relative;
+    left: 15%;
+    text-align: center;
+    color: gold;
+    font-size: 50px;
+}
+
+#imageBox{
+    background-color:rgba(0,0,0,0.65);
+    width: 70%;
+    position: relative;
+    left: 15%;
+    text-align: center;
+    padding-top: 3% ;
+    padding-bottom: 3%;
+
+}
+
+#textBox{
+    background-color:rgba(0,0,0,0.65);
+    width: 70%;
+    position: relative;
+    left: 15%;
+    text-align: center;
+}
+
+#answerBox{
+    background-color:rgba(0,0,0,0.65);
+    width: 70%;
+    position: relative;
+    left: 15%;
+    text-align: center;
+}
+#torchBox1{
+    position:relative;
+    top: -300px;
+}
+
+#torchBox2{
+    position:relative;
+    float:right;
+    top: -430px;
+}
+
+.button {
+    background-color: rgba(255,255,255,0.45) ;
+    font: 13px sans-serif;
+    padding: 2px 4px;
+    text-decoration: none;
+    width: 30px;
+    color: #000
+}

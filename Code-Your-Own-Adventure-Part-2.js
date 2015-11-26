@@ -306,14 +306,14 @@ gameStart();
 
 
 function glow (){
-    var item = prompt("You decide to move towards the glow, it's your only option. You come upon a gray brick room, with lit torches lining the walls. Straight ahead is a large iron door. In the center of the room is a spiral staircase leading downward, it is very dark down there. Will you go (straight) or (down)");
-    switch(item) {
+    var answer = prompt("You decide to move towards the glow, it's your only option. You come upon a gray brick room, with lit torches lining the walls. Straight ahead is a large iron door. In the center of the room is a spiral staircase leading downward, it is very dark down there. Will you go (straight) or (down)");
+    switch(answer) {
         case'straight':
             alert("You go straight");
             break;
         case'down':
             alert("You go down the stairs");
-            //glowDown();
+            glowDown();
             break;
         default:alert("Please choose one. (straight) or (down)");
             glow();
