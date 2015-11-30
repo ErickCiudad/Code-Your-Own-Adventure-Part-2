@@ -44,5 +44,3 @@ function specialCreate(){
     element.appendChild(para);
     para.id = 'special'
 }
-
-

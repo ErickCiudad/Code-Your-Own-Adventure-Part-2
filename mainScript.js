@@ -1,31 +1,39 @@
-function greetMe(name) {
-    var today = new Date();
-    alert("Hello " + name + ", today is " + today.toDateString());
-}
+/**
+ * Created by session2 on 11/30/15.
+ */
+/**
+ * Created by Erick on 11/25/2015.
+ */
 
-greetMe(prompt("What's your name"));
-///////////////////////////////////
-
-///////////////////////////////////////////
-function checkAge () {
-    var age = prompt("Enter your age");
-    if (age >= 16) {
-        console.log("Eligible for play")
-    }
-    else if (age <= 15) {
-        console.log("Not old enough, please close this window")
-    }
-    else {
-        confirm("Please enter in a number");
-        checkAge();
-    }
-}
-checkAge();
 /////////////////////////////////////////////
 ////////////////////////
 
 ////////////////////////
 function gameStart () {
+
+    function greetMe(name) {
+        var today = new Date();
+        alert("Hello " + name + ", today is " + today.toDateString());
+    }
+
+    greetMe(prompt("What's your name"));
+///////////////////////////////////
+
+///////////////////////////////////////////
+    function checkAge () {
+        var age = prompt("Enter your age");
+        if (age >= 16) {
+            console.log("Eligible for play")
+        }
+        else if (age <= 15) {
+            console.log("Not old enough, please close this window")
+        }
+        else {
+            confirm("Please enter in a number");
+            checkAge();
+        }
+    }
+    checkAge();
     alert("You awake in a large grass field. It's bright and hot, and there appears to be no one around You see a dirt road ahead To the left of the road, it runs through a forest To the right, it wanders up a hill");
 
 
@@ -299,12 +307,7 @@ function restart() {
     }
 }
 
-
-
-
-gameStart();
-
-
+////////////////////////////////////////////////
 function glow (){
     var answer = prompt("You decide to move towards the glow, it's your only option. You come upon a gray brick room, with lit torches lining the walls. Straight ahead is a large iron door. In the center of the room is a spiral staircase leading downward, it is very dark down there. Will you go (straight) or (down)");
     switch(answer) {
@@ -333,5 +336,18 @@ function glowDown () {
         restart()
     }
 }
-//Press the up arrow then enter
-///////////////////////////////////////////////////////////
+
+function confirmStart () {
+    var answer =prompt("Would you like to play? (yes) or (no)");
+    switch(answer) {
+        case'yes':
+            gameStart();
+            break;
+        case'no':
+            return;
+            break;
+        default:alert("Please choose one. (yes) or (no)");
+    }
+}
+
+//confirmStart();
