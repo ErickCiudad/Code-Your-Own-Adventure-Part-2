@@ -45,6 +45,30 @@ function specialCreate(){
     para.id = 'special'
 }
 
-function displayApple(){
 
-    }
+function displayApple(src, width, height, alt, id) {
+    var img = document.createElement("img");
+    img.src = src;
+    img.width = width;
+    img.height = height;
+    img.alt = alt;
+    img.id = id;
+// This next line will just add it to the <body> tag
+    document.body.appendChild(img);
+
+    //document.getElementById("appleButton").addEventListener("click", displayBanana('http://www.solagriasrl.it/wp-content/uploads/2014/05/banana.jpg',150, 150, 'Banana', 'banana'));
+    document.getElementById("appleButton").addEventListener("click", function(){
+        displayBanana('http://www.solagriasrl.it/wp-content/uploads/2014/05/banana.jpg',150, 150, 'Banana', 'banana');
+    });
+}
+
+function displayBanana(src, width, height, alt, id) {
+    var img = document.createElement("img");
+    img.src = src;
+    img.width = width;
+    img.height = height;
+    img.alt = alt;
+    img.id = id;
+// This next line will just add it to the <body> tag
+    document.body.appendChild(img);
+}
