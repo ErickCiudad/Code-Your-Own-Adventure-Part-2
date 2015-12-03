@@ -36,7 +36,12 @@
 
 <div id="buttonSwitch" style ="background-color: mediumaquamarine">
     <button id="appleButton">Display Apple</button>
-    <script> displayApple('http://images6.fanpop.com/image/photos/34900000/Apple-fruit-34914779-260-295.jpg',150, 150, 'Apple', 'apple');</script>
+    <script>
+        //Assigns onclick function to button to allow it to display an apple
+        document.getElementById("appleButton").addEventListener("click", function(){
+            displayApple('http://images6.fanpop.com/image/photos/34900000/Apple-fruit-34914779-260-295.jpg',150, 150, 'Apple', 'apple');
+        });
+    </script>
 </div>
 </body>
 </html>
@@ -46,3 +51,8 @@
     <button onclick="displayApple('http://images6.fanpop.com/image/photos/34900000/Apple-fruit-34914779-260-295.jpg',150, 150, 'Apple', 'apple');" id="appleButton">Display Apple</button>
 </div>
 --->
+
+<!--<div id="buttonSwitch" style ="background-color: mediumaquamarine">
+    <button id="appleButton">Display Apple</button>
+    <script> displayApple('http://images6.fanpop.com/image/photos/34900000/Apple-fruit-34914779-260-295.jpg',150, 150, 'Apple', 'apple');</script>
+</div> -->
