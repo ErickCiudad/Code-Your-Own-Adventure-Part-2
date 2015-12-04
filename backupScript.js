@@ -105,3 +105,34 @@ function displayBanana(src, width, height, alt, id) {
 // This next line will just add it to the <body> tag
     document.body.appendChild(img);
 }
+
+/////////////////////////////
+
+/////////////////////////////
+
+/////////////////////////////
+
+/////////////////////////////
+
+function numberCount() {
+    var number = 0;
+    number1('http://ecx.images-amazon.com/images/I/81XUl-A7UZL._SL1500_.jpg',150, 150, 'one', 'one');
+
+}
+
+function number1(src, width, height, alt, id) {
+    var img = document.createElement("img");
+    img.src = src;
+    img.width = width;
+    img.height = height;
+    img.alt = alt;
+    img.id = id;
+// This next line will just add it to the <body> tag
+    document.body.appendChild(img);
+}
+
+
+
+
+
+
