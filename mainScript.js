@@ -26,7 +26,8 @@ function gameStart () {
             console.log("Eligible for play")
         }
         else if (age <= 15) {
-            console.log("Not old enough, please close this window")
+            alert("Not old enough, The window will be closed");
+            window.top.close();
         }
         else {
             confirm("Please enter in a number");
@@ -275,6 +276,8 @@ function gameStart () {
             choice1();
         }
     }
+    /////
+    
     choice1();
 /////////////////////////////////////////////
 }
@@ -326,7 +329,7 @@ function glow (){
 function glowDown () {
     confirm("As you walk downward, you slip and fall. It was a large gap, you fell for seconds before hitting the cold ground. The staircase broke at some point. You can't see anything, you need to find a light source. ");
     confirm("Did you have a torch?");
-    if (item = "Torch") {
+    if (item === "Torch") {
         confirm("You had one");
         confirm("You light the torch, and observe your new surroundings");
     }
@@ -341,6 +344,7 @@ function confirmStart () {
     var answer =prompt("Would you like to play? (yes) or (no)");
     switch(answer) {
         case'yes':
+            document.getElementById('startButton').hidden = true;
             gameStart();
             break;
         case'no':
