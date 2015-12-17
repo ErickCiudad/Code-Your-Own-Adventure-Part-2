@@ -10,7 +10,6 @@
 
 ////////////////////////
 function gameStart () {
-
     function greetMe(name) {
         var today = new Date();
         alert("Hello " + name + ", today is " + today.toDateString());
@@ -44,14 +43,16 @@ function gameStart () {
             var answer = prompt("Where will you turn? (L)  (R)");
             ///USER GOES LEFT///
             if (answer === "L") {
-                confirm("You head left into the forest");
-                console.log("/////////////////////////");
-                console.log("You walk for a long while");
-                console.log("The trees stand tall all around you");
-                console.log("The winding path into the forest eventually splits into a fork");
-                console.log("It continues straight into a hallway of arched trees, deep and silent");
-                console.log("To the right it turns sharply downhill through a tangle of trees. You can hear running water this way");
-
+                function forestLeft() {
+                    confirm("You head left into the forest");
+                    console.log("/////////////////////////");
+                    console.log("You walk for a long while");
+                    console.log("The trees stand tall all around you");
+                    console.log("The winding path into the forest eventually splits into a fork");
+                    console.log("It continues straight into a hallway of arched trees, deep and silent");
+                    console.log("To the right it turns sharply downhill through a tangle of trees. You can hear running water this way");
+                }
+                forestLeft();
                 function forest1() {
                     var answer = prompt("What will you do (S) (R)");
                     if (answer === "S") {
@@ -109,14 +110,15 @@ function gameStart () {
                         darkForest();
                     }
                     else if (answer === "R") {
-                        confirm("You turn right");
-                        console.log("///////////////////");
-                        console.log("You descend downhill through the thick wood");
-                        console.log("The trees enclose all around you, until you are finally set free in a clearing");
-                        console.log("Still under the shade, you come upon a babbling stream");
-                        console.log("It runs wide and deep, and gives off an azure light in the deep woods");
-                        console.log("You're suddenly aware of how thirsty you are");
-
+                        function roadRight() {
+                            confirm("You turn right");
+                            console.log("///////////////////");
+                            console.log("You descend downhill through the thick wood");
+                            console.log("The trees enclose all around you, until you are finally set free in a clearing");
+                            console.log("Still under the shade, you come upon a babbling stream");
+                            console.log("It runs wide and deep, and gives off an azure light in the deep woods");
+                            console.log("You're suddenly aware of how thirsty you are");
+                        }
                         function river1() {
                             var answer = prompt("Will you drink the water? (Yes) (No)");
                             if (answer === "Yes") {
@@ -326,21 +328,37 @@ function gameStart () {
     }
 
 function firstMessage() {
+    page++;
     var para = document.createElement("p");
-    var node = document.createTextNode("You awake in a large grass field. It's bright and hot, and there appears to be no one around You see a dirt road ahead To the left of the road, it runs through a forest To the right, it wanders up a hill. Which way will you turn?");
+    var node = document.createTextNode("You awake in a large grass field. It's bright and hot, and there appears to be no one around You see a dirt road ahead. To the left of the road, it runs through a forest To the right, it wanders up a hill. Which way will you turn?");
     para.appendChild(node);
     var element = document.getElementById("textBox");
     element.appendChild(para);
     para.id = 'special';
     document.getElementById('special').fontcolor("white");
-    document.getElementById('leftKnob').addEventListener("click", function() {
-        
-    });
-    document.getElementById('rightKnob').addEventListener("click", function() {
+    ///////////////////////////////////////////////
 
-    })
+
+}
+function forestLeft() {
+    confirm("You head left into the forest");
+    console.log("/////////////////////////");
+    console.log("You walk for a long while");
+    console.log("The trees stand tall all around you");
+    console.log("The winding path into the forest eventually splits into a fork");
+    console.log("It continues straight into a hallway of arched trees, deep and silent");
+    console.log("To the right it turns sharply downhill through a tangle of trees. You can hear running water this way");
 }
 
+function roadRight() {
+    confirm("You turn right");
+    console.log("///////////////////");
+    console.log("You descend downhill through the thick wood");
+    console.log("The trees enclose all around you, until you are finally set free in a clearing");
+    console.log("Still under the shade, you come upon a babbling stream");
+    console.log("It runs wide and deep, and gives off an azure light in the deep woods");
+    console.log("You're suddenly aware of how thirsty you are");
+}
 ////////////////////////////////////////////////
         function glow() {
             var answer = prompt("You decide to move towards the glow, it's your only option. You come upon a gray brick room, with lit torches lining the walls. Straight ahead is a large iron door. In the center of the room is a spiral staircase leading downward, it is very dark down there. Will you go (straight) or (down)");
@@ -386,5 +404,70 @@ function firstMessage() {
                     alert("Please choose one. (yes) or (no)");
             }
         }
+        var page = 0;
+
+function pageCount() {
+        if (page === 2) {
+            return;
+        }
+        if (page === 3){
+
+        }
+        }
+
+function createText(text) {
+    var para = document.createElement('p');
+    var node = document.createTextNode(text);
+    para.appendChild(node);
+    var element = document.getElementById("textBox");
+    element.appendChild(para);
+    para.id = 'special';
+    document.getElementById('special').fontcolor("white");
+}
+
+function clearPage() {
+    special.parentNode.removeChild(special);
+    picture.parentNode.removeChild(picture)
+}
+
+function venturePic(src, width, height, id) {
+    var img = document.createElement("img");
+    img.src = src;
+    img.width = width;
+    img.height = height;
+    img.id = id;
+// This next line will just add it to the <body> tag
+    document.getElementById('imageBox').appendChild(img);
+}
+
+function leftClick(){
+    if (page === 1) {
+        clearPage();
+    forestLeft();
+        page+=2;
+        //page 3
+        return;
+    }
+    if (page === 2) {
+    }
+}
+
+function rightClick(){
+    if (page === 1){
+        clearPage();
+        roadRight();
+        page++;
+    }
+}
 
 //confirmStart();
+
+/////Junk
+/*var leftButton = document.createElement("p");
+var nodeButton = document.createTextNode("Left");
+leftButton.appendChild(nodeButton);
+var leftElement =  document.getElementById('answerBox');
+leftElement.appendChild(leftButton);
+leftElement.id = 'leftKnob';
+leftElement.className = 'button';
+leftElement.style = 'position: relative; right: -50px; bottom: -30px';*/
