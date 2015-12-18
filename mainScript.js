@@ -10,12 +10,13 @@
 
 ////////////////////////
 function gameStart () {
-    function greetMe(name) {
+    document.getElementById('startButton').hidden = true;
+    /*function greetMe(name) {
         var today = new Date();
         alert("Hello " + name + ", today is " + today.toDateString());
     }
 
-    greetMe(prompt("What's your name"));
+    greetMe(prompt("What's your name"));*/
 ///////////////////////////////////
 
 ///////////////////////////////////////////
@@ -34,7 +35,7 @@ function gameStart () {
         }
     }
 
-    checkAge();
+    //checkAge();
     //alert("You awake in a large grass field. It's bright and hot, and there appears to be no one around You see a dirt road ahead To the left of the road, it runs through a forest To the right, it wanders up a hill");
 
     firstMessage();
@@ -119,6 +120,7 @@ function gameStart () {
                             console.log("It runs wide and deep, and gives off an azure light in the deep woods");
                             console.log("You're suddenly aware of how thirsty you are");
                         }
+                        roadRight();
                         function river1() {
                             var answer = prompt("Will you drink the water? (Yes) (No)");
                             if (answer === "Yes") {
@@ -340,7 +342,7 @@ function firstMessage() {
 
 
 }
-function forestLeft() {
+/*function forestLeft() {
     confirm("You head left into the forest");
     console.log("/////////////////////////");
     console.log("You walk for a long while");
@@ -358,7 +360,7 @@ function roadRight() {
     console.log("Still under the shade, you come upon a babbling stream");
     console.log("It runs wide and deep, and gives off an azure light in the deep woods");
     console.log("You're suddenly aware of how thirsty you are");
-}
+} */
 ////////////////////////////////////////////////
         function glow() {
             var answer = prompt("You decide to move towards the glow, it's your only option. You come upon a gray brick room, with lit torches lining the walls. Straight ahead is a large iron door. In the center of the room is a spiral staircase leading downward, it is very dark down there. Will you go (straight) or (down)");
@@ -406,14 +408,6 @@ function roadRight() {
         }
         var page = 0;
 
-function pageCount() {
-        if (page === 2) {
-            return;
-        }
-        if (page === 3){
-
-        }
-        }
 
 function createText(text) {
     var para = document.createElement('p');
@@ -427,24 +421,41 @@ function createText(text) {
 
 function clearPage() {
     special.parentNode.removeChild(special);
-    picture.parentNode.removeChild(picture)
+    picture.parentNode.removeChild(picture);
 }
 
-function venturePic(src, width, height, id) {
+function venturePic(src) {
     var img = document.createElement("img");
     img.src = src;
-    img.width = width;
-    img.height = height;
-    img.id = id;
+    img.width = 600;
+    img.height = 300;
+    img.id = 'picture';
 // This next line will just add it to the <body> tag
     document.getElementById('imageBox').appendChild(img);
 }
 
+function pageCount() {
+    if (page === 3) {
+        //forest hallway leading to darkness or water
+        clearPage();
+        venturePic('http://miriadna.com/desctopwalls/images/max/Dense-forest.jpg');
+        createText('You head left into the forest. You walk for a long while. The trees stand tall all around you. The winding path into the forest eventually splits into a fork. It continues straight into a hallway of arched trees, deep and silent. To the right it turns sharply downhill through a tangle of trees. You can hear running water this way');
+        return;
+    }
+    if (page === 2){
+    //hill leading to road or monoliths
+        clearPage();
+        venturePic('http://www.allabouthappylife.com/wallpaper/widescreen_wallpapers/tropical_island_photos/path_to_island_hilltop-dsc02576.jpg');
+        createText("You head right, up the hill. The climb is steep. You finally arrive close to the top, nearly an hour later. You have a great view around you. Down the hill, the path continues on, straight forward off into the distance. You can see smoke blowing this way. To your right, you see stone pillars of ruins laying at the foot of the hill.");
+    }
+    else alert("wrong page");
+}
+
+
 function leftClick(){
     if (page === 1) {
-        clearPage();
-    forestLeft();
         page+=2;
+        pageCount();
         //page 3
         return;
     }
@@ -454,9 +465,9 @@ function leftClick(){
 
 function rightClick(){
     if (page === 1){
-        clearPage();
-        roadRight();
         page++;
+        //page 2
+        pageCount();
     }
 }
 
@@ -470,4 +481,24 @@ var leftElement =  document.getElementById('answerBox');
 leftElement.appendChild(leftButton);
 leftElement.id = 'leftKnob';
 leftElement.className = 'button';
-leftElement.style = 'position: relative; right: -50px; bottom: -30px';*/
+leftElement.style = 'position: relative; right: -50px; bottom: -30px';
+
+FADE IN APPENDED THINGS
+ $("#posts").fadeIn();
+ $(content).appendTo("#posts");
+
+// Create the DOM elements
+$(content)
+// Sets the style of the elements to "display:none"
+    .hide()
+// Appends the hidden elements to the "posts" element
+    .appendTo('#posts')
+// Fades the new content into view
+    .fadeIn();
+
+MAKE SOUND
+ var snd = new Audio("file.wav"); // buffers automatically when created
+ snd.play();
+
+ */
+
