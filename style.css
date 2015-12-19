@@ -63,6 +63,14 @@ body{
     color: #000
 }
 
+#pageNumber {
+    text-align: center;
+    -webkit-animation: fadein 1s;
+    left: 45%;
+    top: -200px;
+}
+
+
 @-webkit-keyframes fadein {
     from {opacity: 0;}
     to {opacity: 1;}

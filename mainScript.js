@@ -422,6 +422,7 @@ function createText(text) {
 function clearPage() {
     special.parentNode.removeChild(special);
     picture.parentNode.removeChild(picture);
+    showPage();
 }
 
 function venturePic(src) {
@@ -439,7 +440,7 @@ function pageCount() {
         //forest hallway leading to darkness or water
         clearPage();
         venturePic('http://miriadna.com/desctopwalls/images/max/Dense-forest.jpg');
-        createText('You head left into the forest. You walk for a long while. The trees stand tall all around you. The winding path into the forest eventually splits into a fork. It continues straight into a hallway of arched trees, deep and silent. To the right it turns sharply downhill through a tangle of trees. You can hear running water this way');
+        createText('You head left into the forest. You walk for a long while. The trees stand tall all around you. The winding path into the forest eventually splits into a fork. It continues left into a hallway of arched trees, deep and silent. To the right it turns sharply downhill through a tangle of trees. You can hear running water this way');
         return;
     }
     if (page === 2){
@@ -447,6 +448,28 @@ function pageCount() {
         clearPage();
         venturePic('http://www.allabouthappylife.com/wallpaper/widescreen_wallpapers/tropical_island_photos/path_to_island_hilltop-dsc02576.jpg');
         createText("You head right, up the hill. The climb is steep. You finally arrive close to the top, nearly an hour later. You have a great view around you. Down the hill, the path continues on, straight forward off into the distance. You can see smoke blowing this way. To your right, you see stone pillars of ruins laying at the foot of the hill.");
+    }
+    if (page === 4) {
+        //dark hallway wolf fight or run
+        clearPage();
+        venturePic('http://i.imgur.com/I2oc8WC.jpg');
+        createText("You head straight. The light gets visibly darker. The smell of moss and damp grass fills the air. You develop the feeling of being watched. A large wolf is watching from a distance, it's eyes glowing in the dark shade.");
+    }
+    if (page === 5) {
+        //azure stream drink water or not
+        clearPage();
+        venturePic('http://s0.geograph.org.uk/photos/02/32/023244_35a64f95.jpg');
+        createText("You turn right. You descend downhill through the thick wood. The trees enclose all around you, until you are finally set free in a clearing. Still under the shade, you come upon a babbling stream. It runs wide and deep, and gives off an azure light in the deep woods. You're suddenly aware of how thirsty you are. Do you drink the water?");
+    }
+    if (page === 6) {
+        clearPage();
+        venturePic('http://29.media.tumblr.com/tumblr_ld2qajXa341qar0v7o1_500.jpg');
+        createText('You turn right. You wade your way down the hill and into chest high grass. You continue forward in the heat, and press further closer to the megalithic rocks. The stones mark a small entrance, with steps leading into a cave.');
+    }
+    if (page === 7) {
+        clearPage();
+        venturePic('https://twinphoenix222.files.wordpress.com/2011/01/tennessee-country-dirt-road.jpg');
+        createText("The road your walking on becomes more prominent. A stone wall abruptly arises to your side, about waist high, and cobbled. You get an uneasy feeling, and concentrate about the situation you are in. You hear distant thudding in the dirt.It's horse gallops");
     }
     else alert("wrong page");
 }
@@ -460,6 +483,14 @@ function leftClick(){
         return;
     }
     if (page === 2) {
+        page+=5;
+        pageCount();
+        //page 7
+        return;
+    }
+    if (page === 3) {
+    page++;
+        pageCount();
     }
 }
 
@@ -469,8 +500,23 @@ function rightClick(){
         //page 2
         pageCount();
     }
+    if (page === 2) {
+        page+=4;
+        pageCount();
+        //page 6
+    }
+    if  (page === 3){
+        page+=2;
+        pageCount();
+        //page 5
+    }
+
 }
 
+function showPage() {
+    document.getElementById('pageNumber').innerHTML = page;
+}
+showPage();
 //confirmStart();
 
 /////Junk
