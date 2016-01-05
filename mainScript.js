@@ -446,7 +446,7 @@ function pageCount() {
     if (page === 2){
     //hill leading to road or monoliths
         clearPage();
-        venturePic('http://www.allabouthappylife.com/wallpaper/widescreen_wallpapers/tropical_island_photos/path_to_island_hilltop-dsc02576.jpg');
+        venturePic('http://www.imagebase.net/var/albums/Nature/IMG_3038-1.JPG');
         createText("You head right, up the hill. The climb is steep. You finally arrive close to the top, nearly an hour later. You have a great view around you. Down the hill, the path continues on, straight forward off into the distance. You can see smoke blowing this way. To your right, you see stone pillars of ruins laying at the foot of the hill.");
     }
     if (page === 4) {
@@ -471,6 +471,16 @@ function pageCount() {
         venturePic('https://twinphoenix222.files.wordpress.com/2011/01/tennessee-country-dirt-road.jpg');
         createText("The road your walking on becomes more prominent. A stone wall abruptly arises to your side, about waist high, and cobbled. You get an uneasy feeling, and concentrate about the situation you are in. You hear distant thudding in the dirt.It's horse gallops");
     }
+    if (page === 8) {
+        clearPage();
+        venturePic('https://richardwiseman.files.wordpress.com/2011/01/stick.jpg');
+        createText("You fight the wolf. Without thinking, you grab a large branch by your feet. You swing with maximum force as the wolf jumps towards youA crack rings through the forest, the wolf has died");
+    }
+    if (page === 9) {
+        clearPage();
+        venturePic('http://michaeltrevino.info/wp-content/uploads/2011/04/76.jpg');
+        createText("The wolf bolts after you, you can hear the powerful steps in the leaves behind you. You see but a green blur tunneling towards you, as you race for your life. Your foot catches a root, and you trip forward in a tumble. For a moment you lay on the forest ground. The wolf pounces on you");
+    }
     else alert("wrong page");
 }
 
@@ -491,6 +501,12 @@ function leftClick(){
     if (page === 3) {
     page++;
         pageCount();
+        //page 4
+    }
+    if (page === 4) {
+        page+=4;
+        pageCount();
+        //page 8
     }
 }
 
@@ -510,7 +526,11 @@ function rightClick(){
         pageCount();
         //page 5
     }
-
+    if (page === 4) {
+        page+=5;
+        pageCount();
+        //page 9
+    }
 }
 
 function showPage() {
